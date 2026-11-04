@@ -32,7 +32,7 @@ Ils sont reproductibles, plus légers que les VM, isolés, et permettent d'avoir
 
 1. Pourquoi un Dockerfile est-il préférable à la configuration manuelle d’un conteneur ?
 
-Un Dockerfile sert à centraliser toutes les informations de configuration du conteneur et à lancer en peu d'étapes sa création.
+Un Dockerfile permet de centraliser toutes les instructions nécessaires à la configuration d'un conteneur. Il permet d'automatiser sa création et de reproduire exactement le même environnement sur différentes machines, sans avoir à refaire manuellement toute la configuration.
 
 2. Quelle différence existe entre une image Docker et un conteneur Docker ?
 
@@ -46,8 +46,8 @@ Docker Compose permet, en un unique fichier, de décrire la configuration de plu
 
 2. Quel est le rôle du fichier "docker-compose.yml" ?
 
-Ce fichier permet d'indiquer l'architecture de l'application avec les différents services qu'elle utilise (ports des conteneurs), ainsi que le port de la VM permettant d'appeller l'application (redirigeant vers le port du conteneur principal de l'application).
+Le Docker Compose permet de décrire l'architecture d'une application composée de plusieurs services. Il précise notamment les images à utiliser ou les Dockerfiles à construire, les ports à exposer, les volumes, les variables d'environnement et les réseaux nécessaires à la communication entre les conteneurs.
 
 3. Dans quels cas Docker Compose pourrait-il trouver ses limites ?
 
-Docker Compose est sensible à l'arrêt d'un conteneur; si un conteneur s'arrête, toute l'application s'arrête. Aussi, il ne peut pas déployer et gérer des conteneurs en dehors de la machine où il s'execute.
+Docker Compose présente des limites lorsqu'il faut gérer une infrastructure importante composée de nombreux conteneurs répartis sur plusieurs machines. Il est principalement conçu pour orchestrer des conteneurs sur une seule machine.
